@@ -3,7 +3,7 @@ package com.company;
 import java.util.Map;
 import java.util.Scanner;
 
-public class PlayComputer extends GameLogic {
+public class PlayComputer {
     private GameLogic gameLogic = new GameLogic();
 
     public PlayComputer() {
@@ -35,6 +35,7 @@ public class PlayComputer extends GameLogic {
     }
 
     void play(Map<String, String> playerPlay, String compyPlay) {
+        System.out.println("The Machine went with " + compyPlay);
         if (compyPlay.equals(playerPlay.get("wins"))) {
             System.out.println("Player wins! =D");
         } else if (compyPlay.equals(playerPlay.get("loses"))) {

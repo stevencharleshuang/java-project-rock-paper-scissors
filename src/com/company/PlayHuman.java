@@ -12,8 +12,8 @@ public class PlayHuman {
         System.out.println(
             "\nEnter the Thunderdome!\n" +
             "==================================\n" +
-            "Type 'rock', 'paper' or 'scissors\n' +" +
-            "Player 1, make your move...\n");
+            "Type 'rock', 'paper' or 'scissors'\n\n" +
+            "Player 1, make your move...");
 
         String player1Choice = scanner.nextLine().toLowerCase();
 
@@ -38,9 +38,9 @@ public class PlayHuman {
 
     void play(Map<String, String> player1Play, String player2Play) {
         if (player2Play.equals(player1Play.get("wins"))) {
-            System.out.println("Player 1 wins! =D");
+            System.out.println("Player 1 wins! =D\n" + "Sorry, Player 2 =(");
         } else if (player2Play.equals(player1Play.get("loses"))) {
-            System.out.println("Player 2 wins! =D");
+            System.out.println("Player 2 wins! =D\n" + "Sorry, Player 1 =(");
         } else {
             System.out.println("It's a draw! You both lose...LOL");
         }
