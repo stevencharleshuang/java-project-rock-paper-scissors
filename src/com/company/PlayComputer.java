@@ -1,6 +1,8 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PlayComputer {
@@ -15,9 +17,7 @@ public class PlayComputer {
             "Type 'rock', 'paper' or 'scissors'");
 
         String playerChoice = scanner.nextLine();
-
-        // Refactor for random choice
-        String compyPlay = "paper";
+        String compyPlay = getCompyChoice();
 
         switch(playerChoice) {
             case "rock":
@@ -34,7 +34,7 @@ public class PlayComputer {
         }
     }
 
-    void play(Map<String, String> playerPlay, String compyPlay) {
+    private void play(Map<String, String> playerPlay, String compyPlay) {
         System.out.println("The Machine went with " + compyPlay);
         if (compyPlay.equals(playerPlay.get("wins"))) {
             System.out.println("Player wins! =D");
@@ -43,5 +43,14 @@ public class PlayComputer {
         } else {
             System.out.println("It's a draw! You both lose...but really, only you lose...LOL");
         }
+    }
+
+    private String getCompyChoice () {
+        String[] choicesArr = {"rock", "paper", "scissors"};
+
+        Random random = new Random();
+        int randomNUm = random.nextInt(2);
+
+        return choicesArr[randomNUm];
     }
 }
