@@ -12,10 +12,12 @@ public class Game {
         Map<String, String> scissors = createScissors();
     }
 
+    // Game Accessors
     public String getGameMode() {
         return gameMode;
     }
 
+    // Game Mutators
     public void setGameMode(String gameMode) {
         this.gameMode = gameMode;
     }
@@ -39,5 +41,13 @@ public class Game {
         rock.put("wins", "paper");
         rock.put("loses", "rock");
         return rock;
+    }
+
+    public void playGame() {
+        if (gameMode == "1p") {
+            PlayComputer playComputer = new PlayComputer();
+        } else {
+            PlayHuman playHuman = new PlayHuman();
+        }
     }
 }

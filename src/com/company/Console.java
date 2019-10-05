@@ -42,6 +42,7 @@ public class Console {
     public void initGame(String mode) {
         Game game = new Game();
         game.setGameMode(mode);
+        game.playGame();
     }
 
     public void showHistory() {}
