@@ -20,6 +20,7 @@ public class Console {
         switch(mainMenuChoice) {
             case "1p":
                 System.out.println("Going solo!");
+                Game game = new Game();
                 break;
             case "2p":
                 System.out.println("Bring it on!");
