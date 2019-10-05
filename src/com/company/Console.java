@@ -19,19 +19,19 @@ public class Console {
 
         switch(mainMenuChoice) {
             case "1p":
-                System.out.println("Going solo!");
+                System.out.println("\nGoing solo!");
                 initGame("1p");
                 break;
             case "2p":
-                System.out.println("Bring it on!");
+                System.out.println("\nBring it on!");
                 initGame("2p");
                 break;
             case "history":
-                System.out.println("History of the World Part I");
+                System.out.println("\nHistory of the World Part I");
                 showHistory();
                 break;
             case "quit":
-                System.out.println("Thanks for playing!");
+                System.out.println("\nThanks for playing!");
                 System.exit(0);
                 break;
             default:
