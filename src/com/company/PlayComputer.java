@@ -10,5 +10,13 @@ public class PlayComputer {
             "\nRage Against the Machine!\n" +
             "==================================\n" +
             "Type 'rock', 'paper' or 'scissors'");
+
+        String playerChoice = scanner.nextLine();
+
+        // Refactor for random choice
+        String compyChoice = "paper";
+
+
+
     }
 }
