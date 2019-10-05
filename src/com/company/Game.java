@@ -4,17 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Game {
-    // Rock Paper Scissors Logic
-    // rock beats scissors beats paper beats rock;
+    private String gameMode;
 
     public Game() {
         Map<String, String> rock = createRock();
         Map<String, String> paper = createPaper();
         Map<String, String> scissors = createScissors();
+    }
 
-        System.out.println(rock.get("wins"));
+    public String getGameMode() {
+        return gameMode;
+    }
 
-
+    public void setGameMode(String gameMode) {
+        this.gameMode = gameMode;
     }
 
     private static Map<String, String> createRock() {

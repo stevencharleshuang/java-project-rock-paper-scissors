@@ -20,13 +20,15 @@ public class Console {
         switch(mainMenuChoice) {
             case "1p":
                 System.out.println("Going solo!");
-                Game game = new Game();
+                initGame("1p");
                 break;
             case "2p":
                 System.out.println("Bring it on!");
+                initGame("2p");
                 break;
             case "history":
                 System.out.println("History of the World Part I");
+                showHistory();
                 break;
             case "quit":
                 System.out.println("Thanks for playing!");
@@ -37,9 +39,10 @@ public class Console {
         }
     }
 
-    public void init1P() {}
-
-    public void init2P() {}
+    public void initGame(String mode) {
+        Game game = new Game();
+        game.setGameMode(mode);
+    }
 
     public void showHistory() {}
 }

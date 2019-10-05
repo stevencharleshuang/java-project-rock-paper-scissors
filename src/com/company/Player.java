@@ -7,10 +7,12 @@ public class Player {
         this.choice = choice;
     }
 
+    // Player Accessors
     public String getChoice() {
         return choice;
     }
 
+    // Player Mutators
     public void setChoice(String choice) {
         this.choice = choice;
     }
