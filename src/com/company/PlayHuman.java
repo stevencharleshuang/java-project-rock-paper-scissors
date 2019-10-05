@@ -12,27 +12,50 @@ public class PlayHuman {
         System.out.println(
             "\nEnter the Thunderdome!\n" +
             "==================================\n" +
-            "Type 'rock', 'paper' or 'scissors'\n\n" +
+            "Type:\n" +
+            "1. 'rock'\n" +
+            "2. 'paper'\n" +
+            "3. 'scissors'\n\n" +
             "Player 1, make your move...");
 
-        String player1Choice = scanner.nextLine().toLowerCase();
+        String player1Choice = scanner.nextLine().toLowerCase().trim();
 
         System.out.println("Player 2, make your move...");
 
-        String player2Choice = scanner.nextLine().toLowerCase();
+        String player2Choice = scanner.nextLine().toLowerCase().trim();
 
         switch(player1Choice) {
             case "rock":
+            case "r":
+            case "1":
                 play(gameLogic.getRock(), player2Choice);
                 break;
             case "paper":
+            case "p":
+            case "2":
                 play(gameLogic.getPaper(), player2Choice);
                 break;
             case "scissors":
+            case "s":
+            case "3":
                 play(gameLogic.getScissors(), player2Choice);
                 break;
             default:
                 break;
+        }
+
+        System.out.printf(
+                "\nMOAR?\n" +
+                        "=====================================\n" +
+                        "1. Type 'moar' to play again\n" +
+                        "2. Type 'menu' to return to main menu\n");
+
+        String playAgain = scanner.nextLine().toLowerCase().trim();
+
+        if (playAgain.equals("moar") || playAgain.equals("1")) {
+            PlayHuman playHuman = new PlayHuman();
+        } else {
+            Console console = new Console();
         }
     }
 

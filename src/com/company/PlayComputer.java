@@ -13,24 +13,47 @@ public class PlayComputer {
 
         System.out.println(
             "\nRage Against the Machine!\n" +
-            "==================================\n" +
-            "Type 'rock', 'paper' or 'scissors'");
+            "==========================\n" +
+            "Type:\n" +
+            "1. 'rock'\n" +
+            "2. 'paper'\n" +
+            "3. 'scissors'\n");
 
-        String playerChoice = scanner.nextLine();
+        String playerChoice = scanner.nextLine().toLowerCase();
         String compyPlay = getCompyChoice();
 
         switch(playerChoice) {
             case "rock":
+            case "r":
+            case "1":
                 play(gameLogic.getRock(), compyPlay);
                 break;
             case "paper":
+            case "p":
+            case "2":
                 play(gameLogic.getPaper(), compyPlay);
                 break;
             case "scissors":
+            case "s":
+            case "3":
                 play(gameLogic.getScissors(), compyPlay);
                 break;
             default:
                 break;
+        }
+
+        System.out.printf(
+                "\nMOAR?\n" +
+                "=====================================\n" +
+                "1. Type 'moar' to play again\n" +
+                "2. Type 'menu' to return to main menu\n");
+
+        String playAgain = scanner.nextLine().toLowerCase().trim();
+
+        if (playAgain.equals("moar") || playAgain.equals("1")) {
+            PlayComputer playComputer = new PlayComputer();
+        } else {
+            Console console = new Console();
         }
     }
 

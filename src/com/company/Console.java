@@ -15,22 +15,26 @@ public class Console {
             "3. Type 'history' to view your game history\n" +
             "4. Type 'quit' to stop playing");
 
-        String mainMenuChoice = scanner.nextLine();
+        String mainMenuChoice = scanner.nextLine().toLowerCase().trim();
 
         switch(mainMenuChoice) {
             case "1p":
+            case "1":
                 System.out.println("\nGoing solo!");
                 initGame("1p");
                 break;
             case "2p":
+            case "2":
                 System.out.println("\nBring it on!");
                 initGame("2p");
                 break;
             case "history":
+            case "3":
                 System.out.println("\nHistory of the World Part I");
                 showHistory();
                 break;
             case "quit":
+            case "4":
                 System.out.println("\nThanks for playing!");
                 System.exit(0);
                 break;

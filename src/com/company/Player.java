@@ -1,19 +1,20 @@
 package com.company;
 
-public class Player {
-    private String choice;
+public abstract class Player {
+    private int playerWins;
+    private int playerLosses;
+    private String playerResult;
 
-    public Player(String choice) {
-        this.choice = choice;
+    public Player(int playerWins, int playerLosses, String playerResult) {
+        this.playerWins = playerWins;
+        this.playerLosses = playerLosses;
+        this.playerResult = playerResult;
     }
 
-    // Player Accessors
-    public String getChoice() {
-        return choice;
-    }
+    public abstract void showPlayerWins(int playerWins);
 
-    // Player Mutators
-    public void setChoice(String choice) {
-        this.choice = choice;
-    }
+    public abstract void showPlayerLosses(int playerLosses);
+
+    public abstract void showPLayerChoice(String playerChoice);
+
 }
