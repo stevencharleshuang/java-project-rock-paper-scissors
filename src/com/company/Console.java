@@ -30,9 +30,16 @@ public class Console {
                 break;
             case "quit":
                 System.out.println("Thanks for playing!");
+                System.exit(0);
                 break;
             default:
                 break;
         }
     }
+
+    public void init1P() {}
+
+    public void init2P() {}
+
+    public void showHistory() {}
 }

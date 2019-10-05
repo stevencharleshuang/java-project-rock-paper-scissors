@@ -13,6 +13,8 @@ public class Game {
         Map<String, String> scissors = createScissors();
 
         System.out.println(rock.get("wins"));
+
+
     }
 
     private static Map<String, String> createRock() {
