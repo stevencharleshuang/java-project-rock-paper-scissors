@@ -35,9 +35,9 @@ public class PlayComputer extends GameLogic {
     }
 
     void play(Map<String, String> playerPlay, String compyPlay) {
-        if (compyPlay == playerPlay.get("wins")) {
+        if (compyPlay.equals(playerPlay.get("wins"))) {
             System.out.println("Player wins! =D");
-        } else if (compyPlay == playerPlay.get("loses")) {
+        } else if (compyPlay.equals(playerPlay.get("loses"))) {
             System.out.println("Player loses... =(");
         } else {
             System.out.println("It's a draw! You both lose...but really, only you lose...LOL");

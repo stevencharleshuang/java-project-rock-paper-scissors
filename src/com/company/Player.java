@@ -1,6 +1,7 @@
 package com.company;
 
 public class Player {
+    // Refactor all of this to just track stats
     private String choice;
 
     public Player(String choice) {
