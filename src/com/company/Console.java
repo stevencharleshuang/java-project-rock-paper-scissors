@@ -49,5 +49,7 @@ public class Console {
         game.playGame();
     }
 
-    public void showHistory() {}
+    public void showHistory() {
+        History history = new History();
+    }
 }

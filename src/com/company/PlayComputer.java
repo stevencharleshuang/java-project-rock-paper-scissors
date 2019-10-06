@@ -59,24 +59,16 @@ public class PlayComputer extends Player {
     }
 
     @Override
-    public void showPlayerWins() {
-
-    }
+    public void showPlayerWins() { }
 
     @Override
-    public void showPlayerLosses() {
-
-    }
+    public void showPlayerLosses() { }
 
     @Override
-    public void showPlayerDraws() {
-
-    }
+    public void showPlayerDraws() { }
 
     @Override
-    public void showPlayerResults(String results) {
-
-    }
+    public void showPlayerResults(String results) { }
 
     private void play(Map<String, String> playerPlay, String compyPlay) {
         System.out.println("The Machine went with " + compyPlay);
@@ -88,7 +80,7 @@ public class PlayComputer extends Player {
             System.out.println("Player loses... =(\nCurrent losses: " + getPlayerLosses());
         } else {
             setPlayerDraws(getPlayerDraws() + 1);
-            System.out.println("It's a draw! You both lose...but really, only you lose...LOL " + getPlayerDraws());
+            System.out.println("It's a draw! You both lose...but really, only you lose...LOL\n Current draws: " + getPlayerDraws());
         }
     }
 
