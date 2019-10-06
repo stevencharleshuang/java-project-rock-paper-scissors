@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-public class PlayComputer extends Player {
+public class PlayComputer extends Player implements GameFlowInterface {
     private GameLogic gameLogic = new GameLogic();
 
     public PlayComputer() {
@@ -41,25 +41,14 @@ public class PlayComputer extends Player {
                 play(gameLogic.getScissors(), compyPlay);
                 break;
             default:
+                System.out.println(
+                    "Let's try that again...\n\n" +
+                    "===========================================");
+                PlayComputer playComputer = new PlayComputer();
                 break;
         }
 
-        // Option to continue game mode or return to Main Menu
-        // Refactor for DRYer code(repeats in PlayHuman)
-        System.out.println(
-                "\nMOAR?\n" +
-                "=====================================\n" +
-                "1. Type 'moar' to play again\n" +
-                "2. Type 'menu' to return to main menu\n");
-
-        String playAgain = scanner.nextLine().toLowerCase().trim();
-
-        // Handle User input
-        if (playAgain.equals("moar") || playAgain.equals("1")) {
-            PlayComputer playComputer = new PlayComputer();
-        } else {
-            Console console = new Console();
-        }
+        playAgain(scanner);
     }
 
     // Override methods from abstract class Player
@@ -99,5 +88,27 @@ public class PlayComputer extends Player {
         int randomNUm = random.nextInt(2);
 
         return choicesArr[randomNUm];
+    }
+
+    @Override
+    public void playAgain(Scanner scanner) {
+        // Option to continue game mode or return to Main Menu
+        System.out.println(
+            "\nMOAR?\n" +
+            "=====================================\n" +
+            "1. Type 'moar' to play again\n" +
+            "2. Type 'menu' to return to main menu\n");
+
+        String playAgain = scanner.nextLine().toLowerCase().trim();
+
+        // Handle User input
+        if (playAgain.equals("moar") || playAgain.equals("1")) {
+            PlayComputer playComputer = new PlayComputer();
+        } else if (playAgain.equals("menu") || playAgain.equals("2")) {
+            Console console = new Console();
+        } else {
+            System.out.println("Please type 'moar' or 'menu'...");
+            playAgain(scanner);
+        }
     }
 }

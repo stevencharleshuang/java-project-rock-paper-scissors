@@ -1,16 +1,21 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Player {
     private static int playerWins;
     private static int playerLosses;
     private static int playerDraws;
     private static String playerResult;
+    private static List<String> playerResults;
 
-    public Player(int playerWins, int playerLosses, int playerDraws, String playerResult) {
+    public Player(int playerWins, int playerLosses, int playerDraws, String playerResult, List<String> playerResults) {
         this.playerWins = playerWins;
         this.playerLosses = playerLosses;
         this.playerDraws = playerDraws;
         this.playerResult = playerResult;
+        this.playerResults = playerResults;
     }
 
     public Player() { }

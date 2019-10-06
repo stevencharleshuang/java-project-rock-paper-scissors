@@ -43,6 +43,10 @@ public class Console {
                 System.exit(0);
                 break;
             default:
+                System.out.println(
+                    "Let's try that again...\n\n" +
+                    "===========================================");
+                Console console = new Console();
                 break;
         }
     }

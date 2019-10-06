@@ -3,7 +3,7 @@ package com.company;
 import java.util.Map;
 import java.util.Scanner;
 
-public class PlayHuman {
+public class PlayHuman implements GameFlowInterface {
     private GameLogic gameLogic = new GameLogic();
 
     public PlayHuman() {
@@ -45,22 +45,7 @@ public class PlayHuman {
                 break;
         }
 
-        // Option to continue game mode or return to Main Menu
-        // Refactor for DRYer code(repeats in PlayComputer)
-        System.out.printf(
-                "\nMOAR?\n" +
-                        "=====================================\n" +
-                        "1. Type 'moar' to play again\n" +
-                        "2. Type 'menu' to return to main menu\n");
-
-        String playAgain = scanner.nextLine().toLowerCase().trim();
-
-        // Handle User input
-        if (playAgain.equals("moar") || playAgain.equals("1")) {
-            PlayHuman playHuman = new PlayHuman();
-        } else {
-            Console console = new Console();
-        }
+        playAgain(scanner);
     }
 
     // Outputs the result of the game to the Users
@@ -71,6 +56,28 @@ public class PlayHuman {
             System.out.println("Player 2 wins! =D\n" + "Sorry, Player 1 =(");
         } else {
             System.out.println("It's a draw! You both lose...LOL");
+        }
+    }
+
+    @Override
+    public void playAgain(Scanner scanner) {
+        // Option to continue game mode or return to Main Menu
+        System.out.println(
+            "\nMOAR?\n" +
+            "=====================================\n" +
+            "1. Type 'moar' to play again\n" +
+            "2. Type 'menu' to return to main menu\n");
+
+        String playAgain = scanner.nextLine().toLowerCase().trim();
+
+        // Handle User input
+        if (playAgain.equals("moar") || playAgain.equals("1")) {
+            PlayComputer playComputer = new PlayComputer();
+        } else if (playAgain.equals("menu") || playAgain.equals("2")) {
+            Console console = new Console();
+        } else {
+            System.out.println("Please type 'moar' or 'menu'...");
+            playAgain(scanner);
         }
     }
 }
