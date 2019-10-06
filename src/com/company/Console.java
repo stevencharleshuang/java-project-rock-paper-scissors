@@ -6,6 +6,8 @@ public class Console {
     public Console() {
         Scanner scanner = new Scanner(System.in);
 
+        // Print Welcome and Main Menu
+        // All numerated menu options accept numerical input
         System.out.println(
             "Welcome to Rock, Paper, Scissors! \n\n" +
             "MAIN MENU\n" +
@@ -15,8 +17,10 @@ public class Console {
             "3. Type 'history' to view your game history\n" +
             "4. Type 'quit' to stop playing");
 
+        // Get User selection from Main Menu
         String mainMenuChoice = scanner.nextLine().toLowerCase().trim();
 
+        // Switch statement to handle User selection
         switch(mainMenuChoice) {
             case "1p":
             case "1":
@@ -43,13 +47,17 @@ public class Console {
         }
     }
 
+    // Initialize the game
+    // Single player / two player mode dynamically passed to game initialization
     public void initGame(String mode) {
         Game game = new Game();
         game.setGameMode(mode);
         game.playGame();
     }
 
+    // Show User game history
     public void showHistory() {
         History history = new History();
     }
 }
+

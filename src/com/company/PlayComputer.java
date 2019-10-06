@@ -1,6 +1,5 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,9 +8,9 @@ public class PlayComputer extends Player {
     private GameLogic gameLogic = new GameLogic();
 
     public PlayComputer() {
-
         Scanner scanner = new Scanner(System.in);
 
+        // Print welcome and menu for single player mode
         System.out.println(
             "\nRage Against the Machine!\n" +
             "==========================\n" +
@@ -20,9 +19,11 @@ public class PlayComputer extends Player {
             "2. 'paper'\n" +
             "3. 'scissors'\n");
 
+        // Get the play selections from User and computer(randomized selection)
         String playerChoice = scanner.nextLine().toLowerCase();
         String compyPlay = getCompyChoice();
 
+        // Switch statement to handle User input
         switch(playerChoice) {
             case "rock":
             case "r":
@@ -43,6 +44,8 @@ public class PlayComputer extends Player {
                 break;
         }
 
+        // Option to continue game mode or return to Main Menu
+        // Refactor for DRYer code(repeats in PlayHuman)
         System.out.println(
                 "\nMOAR?\n" +
                 "=====================================\n" +
@@ -51,6 +54,7 @@ public class PlayComputer extends Player {
 
         String playAgain = scanner.nextLine().toLowerCase().trim();
 
+        // Handle User input
         if (playAgain.equals("moar") || playAgain.equals("1")) {
             PlayComputer playComputer = new PlayComputer();
         } else {
@@ -58,6 +62,8 @@ public class PlayComputer extends Player {
         }
     }
 
+    // Override methods from abstract class Player
+    // No need to do anything here...
     @Override
     public void showPlayerWins() { }
 
@@ -70,6 +76,7 @@ public class PlayComputer extends Player {
     @Override
     public void showPlayerResults(String results) { }
 
+    // Logic to update abstract class Player static variables and output a result to the User
     private void play(Map<String, String> playerPlay, String compyPlay) {
         System.out.println("The Machine went with " + compyPlay);
         if (compyPlay.equals(playerPlay.get("wins"))) {
@@ -84,6 +91,7 @@ public class PlayComputer extends Player {
         }
     }
 
+    // Randomly generates a selection from the computer
     private String getCompyChoice () {
         String[] choicesArr = {"rock", "paper", "scissors"};
 

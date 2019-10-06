@@ -13,12 +13,9 @@ public abstract class Player {
         this.playerResult = playerResult;
     }
 
-    public Player() {
-
-    }
+    public Player() { }
 
     // Player Accessors
-
     public int getPlayerWins() {
         return playerWins;
     }
@@ -36,7 +33,6 @@ public abstract class Player {
     }
 
     // Player Mutators
-
     public void setPlayerWins(int playerWins) {
         this.playerWins = playerWins;
     }

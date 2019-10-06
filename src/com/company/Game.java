@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Game {
     private String gameMode;
 
@@ -16,7 +13,7 @@ public class Game {
         this.gameMode = gameMode;
     }
 
-
+    // Logic to handle the mode that the game is initialized with (single player || two player)
     public void playGame() {
         if (gameMode == "1p") {
             PlayComputer playComputer = new PlayComputer();
@@ -25,3 +22,4 @@ public class Game {
         }
     }
 }
+

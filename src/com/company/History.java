@@ -6,8 +6,10 @@ public class History extends Player {
 
     public History() {
         Scanner scanner = new Scanner(System.in);
+
+        // Display Menu
         System.out.println(
-            "Player History\n" +
+            "Player History Against The Machina\n" +
             "=================================="
         );
         System.out.println("Current Wins: ");
@@ -17,6 +19,7 @@ public class History extends Player {
         System.out.println("Current Draws: ");
         showPlayerDraws();
 
+        // Return to Main Menu
         System.out.println(
             "==================================\n" +
             "Type 'menu' to return to main menu\n");
@@ -28,6 +31,7 @@ public class History extends Player {
         }
     }
 
+    // Override methods from abstract Player class
     @Override
     public void showPlayerWins() {
         System.out.println(getPlayerWins());
@@ -48,3 +52,4 @@ public class History extends Player {
         System.out.println(getPlayerResult());
     }
 }
+

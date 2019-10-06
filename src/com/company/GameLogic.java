@@ -8,6 +8,9 @@ public class GameLogic {
     private  Map<String, String> paper = createPaper();
     private  Map<String, String> scissors = createScissors();
 
+    // Logic adapted from https://rosettacode.org/wiki/Rock-paper-scissors Javascript example
+    // Win lose conditions are determined by the qualities of each item selection
+    // Rock beats scissors, defeated by paper and so on...
     private static Map<String, String> createRock() {
         Map<String,String> rock = new HashMap<String,String>();
         rock.put("wins", "scissors");
@@ -30,6 +33,7 @@ public class GameLogic {
     }
 
     // GameLogic Accessors
+    // GameLogic Mutators omitted as these properties should not be set or updated
     public Map<String, String> getRock() {
         return rock;
     }
@@ -42,3 +46,4 @@ public class GameLogic {
         return scissors;
     }
 }
+
