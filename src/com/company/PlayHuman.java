@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class PlayHuman {
+
     private GameLogic gameLogic = new GameLogic();
 
     public PlayHuman() {

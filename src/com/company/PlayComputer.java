@@ -5,10 +5,11 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-public class PlayComputer {
+public class PlayComputer extends Player {
     private GameLogic gameLogic = new GameLogic();
 
     public PlayComputer() {
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(
@@ -42,7 +43,7 @@ public class PlayComputer {
                 break;
         }
 
-        System.out.printf(
+        System.out.println(
                 "\nMOAR?\n" +
                 "=====================================\n" +
                 "1. Type 'moar' to play again\n" +
@@ -60,11 +61,14 @@ public class PlayComputer {
     private void play(Map<String, String> playerPlay, String compyPlay) {
         System.out.println("The Machine went with " + compyPlay);
         if (compyPlay.equals(playerPlay.get("wins"))) {
-            System.out.println("Player wins! =D");
+            setPlayerWins(getPlayerWins() + 1);
+            System.out.println("Player wins! =D\nCurrent wins: " + getPlayerWins());
         } else if (compyPlay.equals(playerPlay.get("loses"))) {
-            System.out.println("Player loses... =(");
+            setPlayerLosses(getPlayerLosses() + 1);
+            System.out.println("Player loses... =(\nCurrent losses: " + getPlayerLosses());
         } else {
-            System.out.println("It's a draw! You both lose...but really, only you lose...LOL");
+            setPlayerDraws(getPlayerDraws() + 1);
+            System.out.println("It's a draw! You both lose...but really, only you lose...LOL " + getPlayerDraws());
         }
     }
 
@@ -75,5 +79,20 @@ public class PlayComputer {
         int randomNUm = random.nextInt(2);
 
         return choicesArr[randomNUm];
+    }
+
+    @Override
+    public void showPlayerWins(int playerWins) {
+
+    }
+
+    @Override
+    public void showPlayerLosses(int playerLosses) {
+
+    }
+
+    @Override
+    public void showPlayerResults(String results) {
+
     }
 }
