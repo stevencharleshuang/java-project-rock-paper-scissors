@@ -58,6 +58,26 @@ public class PlayComputer extends Player {
         }
     }
 
+    @Override
+    public void showPlayerWins() {
+
+    }
+
+    @Override
+    public void showPlayerLosses() {
+
+    }
+
+    @Override
+    public void showPlayerDraws() {
+
+    }
+
+    @Override
+    public void showPlayerResults(String results) {
+
+    }
+
     private void play(Map<String, String> playerPlay, String compyPlay) {
         System.out.println("The Machine went with " + compyPlay);
         if (compyPlay.equals(playerPlay.get("wins"))) {
@@ -79,20 +99,5 @@ public class PlayComputer extends Player {
         int randomNUm = random.nextInt(2);
 
         return choicesArr[randomNUm];
-    }
-
-    @Override
-    public void showPlayerWins(int playerWins) {
-
-    }
-
-    @Override
-    public void showPlayerLosses(int playerLosses) {
-
-    }
-
-    @Override
-    public void showPlayerResults(String results) {
-
     }
 }

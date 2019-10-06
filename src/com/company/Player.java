@@ -53,9 +53,11 @@ public abstract class Player {
         this.playerResult = playerResult;
     }
 
-    public abstract void showPlayerWins(int playerWins);
+    public abstract void showPlayerWins();
 
-    public abstract void showPlayerLosses(int playerLosses);
+    public abstract void showPlayerLosses();
+
+    public abstract void showPlayerDraws();
 
     public abstract void showPlayerResults(String results);
 
