@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class History extends Player {
@@ -12,12 +14,19 @@ public class History extends Player {
             "Player History Against The Machina\n" +
             "=================================="
         );
+
         System.out.println("Current Wins: ");
         showPlayerWins();
         System.out.println("Current Losses: ");
         showPlayerLosses();
         System.out.println("Current Draws: ");
         showPlayerDraws();
+
+        if (getPlayerResults() != null) {
+            getPlayerResults().forEach(result -> System.out.println(result.toString()));
+        } else {
+            System.out.println("\nNo current player history");
+        }
 
         // Return to Main Menu
         System.out.println(
@@ -45,11 +54,6 @@ public class History extends Player {
     @Override
     public void showPlayerDraws() {
         System.out.println(getPlayerDraws());
-    }
-
-    @Override
-    public void showPlayerResults(String results) {
-        System.out.println(getPlayerResult());
     }
 }
 

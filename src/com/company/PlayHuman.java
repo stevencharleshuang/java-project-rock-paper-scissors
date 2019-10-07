@@ -42,6 +42,11 @@ public class PlayHuman implements GameFlowInterface {
                 play(gameLogic.getScissors(), player2Choice);
                 break;
             default:
+                System.out.println(
+                    "Someone's messed up their inputs...\n" +
+                    "let's try that again...\n" +
+                    "===========================================\n");
+                PlayHuman playHuman = new PlayHuman();
                 break;
         }
 
@@ -72,7 +77,7 @@ public class PlayHuman implements GameFlowInterface {
 
         // Handle User input
         if (playAgain.equals("moar") || playAgain.equals("1")) {
-            PlayComputer playComputer = new PlayComputer();
+            PlayHuman playHuman = new PlayHuman();
         } else if (playAgain.equals("menu") || playAgain.equals("2")) {
             Console console = new Console();
         } else {

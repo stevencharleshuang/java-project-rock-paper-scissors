@@ -1,5 +1,6 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +9,9 @@ public abstract class Player {
     private static int playerLosses;
     private static int playerDraws;
     private static String playerResult;
-    private static List<String> playerResults;
+    private static ArrayList<String> playerResults;
 
-    public Player(int playerWins, int playerLosses, int playerDraws, String playerResult, List<String> playerResults) {
+    public Player(int playerWins, int playerLosses, int playerDraws, String playerResult, ArrayList<String> playerResults) {
         this.playerWins = playerWins;
         this.playerLosses = playerLosses;
         this.playerDraws = playerDraws;
@@ -37,6 +38,10 @@ public abstract class Player {
         return playerResult;
     }
 
+    public static ArrayList<String> getPlayerResults() {
+        return playerResults;
+    }
+
     // Player Mutators
     public void setPlayerWins(int playerWins) {
         this.playerWins = playerWins;
@@ -54,12 +59,13 @@ public abstract class Player {
         this.playerResult = playerResult;
     }
 
+    public static void setPlayerResults(ArrayList<String> playerResults) {
+        Player.playerResults = playerResults;
+    }
+
     public abstract void showPlayerWins();
 
     public abstract void showPlayerLosses();
 
     public abstract void showPlayerDraws();
-
-    public abstract void showPlayerResults(String results);
-
 }
