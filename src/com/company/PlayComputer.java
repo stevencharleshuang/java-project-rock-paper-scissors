@@ -132,7 +132,7 @@ public class PlayComputer extends Player implements GameFlowInterface {
         String[] choicesArr = {"rock", "paper", "scissors"};
 
         Random random = new Random();
-        int randomNUm = random.nextInt(2);
+        int randomNUm = random.nextInt(3);
 
         return choicesArr[randomNUm];
     }
