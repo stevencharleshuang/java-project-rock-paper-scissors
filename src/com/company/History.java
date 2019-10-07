@@ -3,14 +3,13 @@ package com.company;
 import java.util.Scanner;
 
 public class History extends Player {
-
     public History() {
         Scanner scanner = new Scanner(System.in);
 
         // Display Menu
         System.out.println(
-            "Player History Against The Machina\n" +
-            "=================================="
+                "Player History Against The Machina\n" +
+                        "==========================================="
         );
 
         System.out.println("Current Wins: ");
@@ -28,8 +27,8 @@ public class History extends Player {
 
         // Return to Main Menu
         System.out.println(
-            "==================================\n" +
-            "Type 'menu' to return to main menu\n");
+                "===========================================\n" +
+                        "1. Type 'menu' to return to main menu\n");
 
         String toMenu = scanner.nextLine().toLowerCase().trim();
 

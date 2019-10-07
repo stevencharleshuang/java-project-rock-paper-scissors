@@ -9,20 +9,20 @@ public class Console {
         // Print Welcome and Main Menu
         // All numerated menu options accept numerical input
         System.out.println(
-            "Welcome to Rock, Paper, Scissors! \n\n" +
-            "MAIN MENU\n" +
-            "===========================================\n" +
-            "1. Type '1p' to play against the computer\n" +
-            "2. Type '2p' to play 2 player mode\n" +
-            "3. Type 'history' to view your game history\n" +
-            "4. Type 'quit' to stop playing\n\n" +
-            "Numerical inputs also accepted where available");
+                "Welcome to Rock, Paper, Scissors! \n\n" +
+                        "MAIN MENU\n" +
+                        "===========================================\n" +
+                        "1. Type '1p' to play against the computer\n" +
+                        "2. Type '2p' to play 2 player mode\n" +
+                        "3. Type 'history' to view your game history\n" +
+                        "4. Type 'quit' to stop playing\n\n" +
+                        "Numerical inputs also accepted where available");
 
         // Get User selection from Main Menu
         String mainMenuChoice = scanner.nextLine().toLowerCase().trim();
 
         // Switch statement to handle User selection
-        switch(mainMenuChoice) {
+        switch (mainMenuChoice) {
             case "1p":
             case "1":
                 System.out.println("\nGoing solo!");
@@ -45,8 +45,8 @@ public class Console {
                 break;
             default:
                 System.out.println(
-                    "Let's try that again...\n\n" +
-                    "===========================================");
+                        "Let's try that again...\n\n" +
+                                "===========================================");
                 Console console = new Console();
                 break;
         }

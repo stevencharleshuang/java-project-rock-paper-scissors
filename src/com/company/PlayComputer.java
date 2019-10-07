@@ -10,19 +10,19 @@ public class PlayComputer extends Player implements GameFlowInterface {
 
         // Print welcome and menu for single player mode
         System.out.println(
-            "\nRage Against the Machine!\n" +
-            "==========================\n" +
-            "Type:\n" +
-            "1. 'rock'\n" +
-            "2. 'paper'\n" +
-            "3. 'scissors'\n");
+                "\nRage Against the Machine!\n" +
+                        "=====================================\n" +
+                        "Type:\n" +
+                        "1. 'rock'\n" +
+                        "2. 'paper'\n" +
+                        "3. 'scissors'\n");
 
         // Get the play selections from User and computer(randomized selection)
         String playerChoice = scanner.nextLine().toLowerCase();
         String compyPlay = getCompyChoice();
 
         // Switch statement to handle User input
-        switch(playerChoice) {
+        switch (playerChoice) {
             case "rock":
             case "r":
             case "1":
@@ -40,8 +40,8 @@ public class PlayComputer extends Player implements GameFlowInterface {
                 break;
             default:
                 System.out.println(
-                    "Let's try that again...\n\n" +
-                    "===========================================");
+                        "Let's try that again...\n\n" +
+                                "=====================================");
                 PlayComputer playComputer = new PlayComputer();
                 break;
         }
@@ -52,22 +52,25 @@ public class PlayComputer extends Player implements GameFlowInterface {
     // Override methods from abstract class Player
     // No need to do anything here...
     @Override
-    public void showPlayerWins() { }
+    public void showPlayerWins() {
+    }
 
     @Override
-    public void showPlayerLosses() { }
+    public void showPlayerLosses() {
+    }
 
     @Override
-    public void showPlayerDraws() { }
+    public void showPlayerDraws() {
+    }
 
     @Override
     public void playAgain(Scanner scanner) {
         // Option to continue game mode or return to Main Menu
         System.out.println(
                 "\nMOAR?\n" +
-                "=====================================\n" +
-                "1. Type 'moar' to play again\n" +
-                "2. Type 'menu' to return to main menu\n");
+                        "===========================================\n" +
+                        "1. Type 'moar' to play again\n" +
+                        "2. Type 'menu' to return to main menu\n");
 
         String playAgain = scanner.nextLine().toLowerCase().trim();
 
@@ -86,7 +89,9 @@ public class PlayComputer extends Player implements GameFlowInterface {
     private void play(Map<String, String> playerPlay, String compyPlay) {
         ArrayList<String> currentPlayResults;
 
+        // Instantiate the player's game history with null check if player history exists or not
         if (getPlayerResults() != null) {
+            // If player has history, get the history so that we can add to it with new history
             currentPlayResults = new ArrayList<>(getPlayerResults());
         } else {
             currentPlayResults = new ArrayList<>();
@@ -95,8 +100,10 @@ public class PlayComputer extends Player implements GameFlowInterface {
         System.out.println("The Machine went with " + compyPlay);
 
         if (compyPlay.equals(playerPlay.get("wins"))) {
+            // Increment player's win count
             setPlayerWins(getPlayerWins() + 1);
             System.out.println("Player wins! =D\nCurrent wins: " + getPlayerWins());
+            // Set player's result statement to add to history log
             setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. Player won!");
         } else if (compyPlay.equals(playerPlay.get("loses"))) {
             setPlayerLosses(getPlayerLosses() + 1);
@@ -108,12 +115,13 @@ public class PlayComputer extends Player implements GameFlowInterface {
             setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. It was a draw!");
         }
 
+        // Add the latest result and then set the current history log to the playerResults ArrayList
         currentPlayResults.add(getPlayerResult());
         setPlayerResults(currentPlayResults);
     }
 
     // Randomly generates a selection from the computer
-    private String getCompyChoice () {
+    private String getCompyChoice() {
         String[] choicesArr = {"rock", "paper", "scissors"};
 
         Random random = new Random();

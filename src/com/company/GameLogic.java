@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GameLogic {
-    private  Map<String, String> rock = createRock();
-    private  Map<String, String> paper = createPaper();
-    private  Map<String, String> scissors = createScissors();
+    private Map<String, String> rock = createRock();
+    private Map<String, String> paper = createPaper();
+    private Map<String, String> scissors = createScissors();
 
     // Logic adapted from https://rosettacode.org/wiki/Rock-paper-scissors Javascript example
     // Win lose conditions are determined by the qualities of each item selection
     // Rock beats scissors, defeated by paper and so on...
     private static Map<String, String> createRock() {
-        Map<String,String> rock = new HashMap<String,String>();
+        Map<String, String> rock = new HashMap<String, String>();
         rock.put("type", "rock");
         rock.put("wins", "scissors");
         rock.put("loses", "paper");
@@ -20,7 +20,7 @@ public class GameLogic {
     }
 
     private static Map<String, String> createPaper() {
-        Map<String,String> paper = new HashMap<String,String>();
+        Map<String, String> paper = new HashMap<String, String>();
         paper.put("type", "paper");
         paper.put("wins", "rock");
         paper.put("loses", "scissors");
@@ -28,7 +28,7 @@ public class GameLogic {
     }
 
     private static Map<String, String> createScissors() {
-        Map<String,String> scissors = new HashMap<String,String>();
+        Map<String, String> scissors = new HashMap<String, String>();
         scissors.put("type", "scissors");
         scissors.put("wins", "paper");
         scissors.put("loses", "rock");

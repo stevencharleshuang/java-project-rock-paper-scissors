@@ -7,6 +7,7 @@ public abstract class Player {
     private static int playerLosses;
     private static int playerDraws;
     private static String playerResult;
+    // This will track and store the player's results
     private static ArrayList<String> playerResults;
 
     public Player(int playerWins, int playerLosses, int playerDraws, String playerResult, ArrayList<String> playerResults) {
@@ -17,7 +18,8 @@ public abstract class Player {
         this.playerResults = playerResults;
     }
 
-    public Player() { }
+    public Player() {
+    }
 
     // Player Accessors
     public int getPlayerWins() {
