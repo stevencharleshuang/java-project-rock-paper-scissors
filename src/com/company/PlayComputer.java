@@ -97,15 +97,15 @@ public class PlayComputer extends Player implements GameFlowInterface {
         if (compyPlay.equals(playerPlay.get("wins"))) {
             setPlayerWins(getPlayerWins() + 1);
             System.out.println("Player wins! =D\nCurrent wins: " + getPlayerWins());
-            setPlayerResult("Player went with: " + playerPlay.toString() + " Compy went with: " + compyPlay + " Player won!");
+            setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. Player won!");
         } else if (compyPlay.equals(playerPlay.get("loses"))) {
             setPlayerLosses(getPlayerLosses() + 1);
             System.out.println("Player loses... =(\nCurrent losses: " + getPlayerLosses());
-            setPlayerResult("Player went with: " + playerPlay + " Compy went with: " + compyPlay + " Player lost!");
+            setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. Player lost!");
         } else {
             setPlayerDraws(getPlayerDraws() + 1);
             System.out.println("It's a draw! You both lose...but really, only you lose...LOL\n Current draws: " + getPlayerDraws());
-            setPlayerResult("Player went with: " + playerPlay + " Compy went with: " + compyPlay + " It was a draw!");
+            setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. It was a draw!");
         }
 
         currentPlayResults.add(getPlayerResult());

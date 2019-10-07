@@ -15,7 +15,8 @@ public class Console {
             "1. Type '1p' to play against the computer\n" +
             "2. Type '2p' to play 2 player mode\n" +
             "3. Type 'history' to view your game history\n" +
-            "4. Type 'quit' to stop playing");
+            "4. Type 'quit' to stop playing\n\n" +
+            "Numerical inputs also accepted where available");
 
         // Get User selection from Main Menu
         String mainMenuChoice = scanner.nextLine().toLowerCase().trim();
