@@ -19,9 +19,9 @@ public class History extends Player {
         System.out.println("Current Draws: ");
         showPlayerDraws();
 
-        if (getPlayerResults() != null) {
+        try {
             getPlayerResults().forEach(result -> System.out.println(result.toString()));
-        } else {
+        } catch (NullPointerException e) {
             System.out.println("\nNo current player history");
         }
 
@@ -32,7 +32,7 @@ public class History extends Player {
 
         String toMenu = scanner.nextLine().toLowerCase().trim();
 
-        if (toMenu.equals("menu") || toMenu.equals("m")) {
+        if (toMenu.equals("menu") || toMenu.equals("m") || toMenu.equals("1")) {
             Console console = new Console();
         }
     }
