@@ -104,7 +104,7 @@ public class PlayHuman implements GameFlowInterface {
             case "paper":
             case "p":
             case "2":
-                choice =  gameLogic.getPaper().get("type");
+                choice = gameLogic.getPaper().get("type");
                 break;
             case "scissors":
             case "s":

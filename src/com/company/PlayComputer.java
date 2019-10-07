@@ -53,14 +53,17 @@ public class PlayComputer extends Player implements GameFlowInterface {
     // No need to do anything here...
     @Override
     public void showPlayerWins() {
+        System.out.println("Current wins: " + getPlayerWins());
     }
 
     @Override
     public void showPlayerLosses() {
+        System.out.println("Current losses: " + getPlayerLosses());
     }
 
     @Override
     public void showPlayerDraws() {
+        System.out.println("Current draws: " + getPlayerDraws());
     }
 
     @Override
@@ -102,22 +105,26 @@ public class PlayComputer extends Player implements GameFlowInterface {
         if (compyPlay.equals(playerPlay.get("wins"))) {
             // Increment player's win count
             setPlayerWins(getPlayerWins() + 1);
-            System.out.println("Player wins! =D\nCurrent wins: " + getPlayerWins());
+            System.out.println("Player wins! =D\n");
             // Set player's result statement to add to history log
             setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. Player won!");
         } else if (compyPlay.equals(playerPlay.get("loses"))) {
             setPlayerLosses(getPlayerLosses() + 1);
-            System.out.println("Player loses... =(\nCurrent losses: " + getPlayerLosses());
+            System.out.println("Player loses... =(\n");
             setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. Player lost!");
         } else {
             setPlayerDraws(getPlayerDraws() + 1);
-            System.out.println("It's a draw! You both lose...but really, only you lose...LOL\n Current draws: " + getPlayerDraws());
+            System.out.println("It's a draw! You both lose...but really, only you lose...LOL\n");
             setPlayerResult("Player went with '" + playerPlay.get("type") + "'. Compy went with '" + compyPlay + "'. It was a draw!");
         }
 
         // Add the latest result and then set the current history log to the playerResults ArrayList
         currentPlayResults.add(getPlayerResult());
         setPlayerResults(currentPlayResults);
+
+        showPlayerWins();
+        showPlayerLosses();
+        showPlayerDraws();
     }
 
     // Randomly generates a selection from the computer
